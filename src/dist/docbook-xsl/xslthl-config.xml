@@ -48,3 +48,4 @@ Several of the lesser used languages have been removed.
   <highlighter id="rust" file="./xslthl/rust-hl.xml" />
   <namespace prefix="xslthl" uri="http://xslthl.sf.net" />
 </xslthl-config>
+

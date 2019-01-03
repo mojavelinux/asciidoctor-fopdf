@@ -11,6 +11,13 @@ abspath() {
   fi
 }
 
+sedi () {
+    # if GNU version of sed then `sed -i -- "$@"` otherwise `sed -i "" "$@"`
+    # (the latter is needed to support BSD version of sed used in  MacOS X)
+    sed --version >/dev/null 2>&1 && sed -i -- "$@" || sed -i "" "$@"
+}
+
+
 usage() {
   echo "Usage: $0 [-t <path>] [-f FORMAT] [-H] FILE"
   echo "Example: $0 -t /path/to/custom/docbook-xsl mydoc.xml"
